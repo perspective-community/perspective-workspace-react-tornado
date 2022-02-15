@@ -1,0 +1,52 @@
+{
+  "name": "perspective-workspace-react-tornado",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A perspective-workspace integrated into a react project",
+  "scripts": {
+    "build": "webpack --color",
+    "clean": "rimraf dist",
+    "lint": "eslint --ext .js --ext .jsx ./*.js src/",
+    "fix": "yarn lint --fix",
+    "test": "echo \"todo\"",
+    "watch": "webpack --color --watch"
+  },
+  "author": "t.paine154@gmail.com",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@finos/perspective": "^1.5.0",
+    "@finos/perspective-viewer": "^1.5.0",
+    "@finos/perspective-viewer-d3fc": "^1.5.0",
+    "@finos/perspective-viewer-datagrid": "^1.5.0",
+    "@finos/perspective-workspace": "^1.5.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.4",
+    "@babel/eslint-parser": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@finos/perspective-webpack-plugin": "^1.5.0",
+    "babel-loader": "^8.2.3",
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-plugin-jsx-a11y": "^6.6.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "html-webpack-plugin": "^5.3.2",
+    "prettier": "^2.5.1",
+    "prettier-eslint": "^13.0.0",
+    "raw-loader": "^4.0.2",
+    "source-map-loader": "^3.0.0",
+    "style-loader": "^3.3.0",
+    "to-string-loader": "^1.2.0",
+    "webpack": "^5.69.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  }
+}
