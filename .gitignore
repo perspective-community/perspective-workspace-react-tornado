@@ -211,5 +211,16 @@ dist
 *.pyc
 __pycache__
 
+# python tests
+python_junit.xml
+.coverage
+coverage.xml
+
+# python dist
+*.egg-info
+
 # Mac
 .DS_Store
+
+# generated JS assets
+perspective_workspace_react_tornado/static

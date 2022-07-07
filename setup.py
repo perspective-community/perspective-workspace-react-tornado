@@ -1,15 +1,21 @@
 from codecs import open
 from os import path
 from setuptools import find_packages, setup
+from jupyter_packaging import npm_builder, wrap_installers
 
 name = "perspective_workspace_react_tornado"
 pjoin = path.join
 here = path.abspath(path.dirname(__file__))
+jshere = path.abspath(pjoin(path.dirname(__file__), "js"))
 
 with open(path.join(here, "README.md"), encoding="utf-8") as f:
     long_description = f.read().replace("\r\n", "\n")
 
 requires = [
+    "jupyter_packaging",
+    "pandas",
+    "perspective-python",
+    "superstore",
     "tornado",
 ]
 
@@ -29,6 +35,22 @@ requires_dev = (
         "flake8-black>=0.2.1",
     ]
 )
+
+# JS files
+static_path = pjoin(name, "static")
+
+# Representative files that should exist after a successful build
+jstargets = [
+    pjoin(static_path, "main.js"),
+]
+
+builder = npm_builder(
+    build_cmd="build",
+    path=jshere,
+    source_dir=pjoin(jshere, "src"),
+    build_dir=static_path,
+)
+
 
 setup(
     name=name,
@@ -51,6 +73,9 @@ setup(
         "Framework :: Jupyter :: JupyterLab",
     ],
     platforms="Linux, Mac OS X, Windows",
+    cmdclass=wrap_installers(
+        post_develop=builder, pre_dist=builder, ensured_targets=jstargets
+    ),
     include_package_data=True,
     zip_safe=False,
     packages=find_packages(),

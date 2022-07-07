@@ -2,8 +2,10 @@ const path = require("path");
 const PerspectivePlugin = require("@finos/perspective-webpack-plugin");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
+const mode = process.argv.includes("--watch") ? "development" : "production";
+
 module.exports = {
-  mode: "development",
+  mode,
   devtool: "source-map",
   output: {
     path: path.resolve(__dirname, "..", "perspective_workspace_react_tornado", "static"),

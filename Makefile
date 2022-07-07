@@ -36,7 +36,14 @@ develop:  ## install to site-packages in editable mode
 	cd js; yarn
 	python -m pip install -e .[develop]
 
+watchjs:  ## watch for javacsript changes and rebuild
+	cd js; yarn watch
+
+watchpy:   ## watch for python changes and restart
+	python -m perspective_workspace_react_tornado --watch
+
 watch:  ## watch for changes and rebuild
+	make -j2 watchjs watchpy
 
 install:  ## install to site-packages
 	python -m pip install .

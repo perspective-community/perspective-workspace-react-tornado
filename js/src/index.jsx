@@ -22,6 +22,8 @@ function App() {
   const websocket = perspective.websocket(`ws://${window.location.host}/websocket`);
   const defaultTables = {
     superstore: websocket.open_table("superstore"),
+    timeseries: websocket.open_table("timeseries"),
+    ticking: websocket.open_table("ticking"),
   };
 
   /**

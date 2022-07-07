@@ -4,11 +4,12 @@
   "version": "0.1.0",
   "description": "A perspective-workspace integrated into a react project",
   "scripts": {
-    "start": "webpack serve --open",
     "build": "webpack --color",
-    "fix": "yarn lint --fix",
+    "clean": "rimraf dist",
     "lint": "eslint --ext .js --ext .jsx ./*.js src/",
-    "clean": "rimraf dist"
+    "fix": "yarn lint --fix",
+    "test": "echo \"todo\"",
+    "watch": "webpack --color --watch"
   },
   "author": "t.paine154@gmail.com",
   "license": "Apache-2.0",
